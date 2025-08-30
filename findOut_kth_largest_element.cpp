@@ -1,3 +1,4 @@
+// with priority queue
 class Solution
 {
 public:
@@ -15,5 +16,21 @@ public:
             pq.pop();
 
         return pq.top();
+    }
+};
+
+// with sort
+class Solution
+{
+public:
+    static bool comp(int a, int b)
+    {
+        return a > b;
+    }
+
+    int findKthLargest(vector<int> &nums, int k)
+    {
+        sort(nums.begin(), nums.end(), comp);
+        return nums[k - 1];
     }
 };
